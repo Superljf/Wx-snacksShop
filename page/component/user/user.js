@@ -6,7 +6,7 @@ Page({
    */
   data: {
         thumb:'',
-        nickname: '',
+        nickname:'',
         orders:[],
         hasAddress: false,
         address:{}
@@ -21,7 +21,7 @@ Page({
           success: function (res) {
             self.setData({
               thumb: res.userInfo.avataUrl,
-              nickname: res.userInfo.nickname
+              nickname: res.userInfo.nickName
             })
           }
         }),
@@ -60,6 +60,7 @@ Page({
             }
           })
   },
+
   // 发起支付请求
   payOrders() {
         wx.requestPayment({

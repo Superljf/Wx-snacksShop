@@ -5,10 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-      carts: [],
-      hasList: false,
-      totalPrice: 0,
-      selectAllStatus: true,
+      carts: [], //购物车列表
+      hasList: false,   //列表是否有数据
+      totalPrice: 0,    // 总价 初始为0 
+      selectAllStatus: true,  // 全选状态  默认全选
       obj: {
         name: "hello"
       }
@@ -33,7 +33,7 @@ Page({
    */
   onShow: function () {
         this.setData({
-          hasList: true,
+          hasList: true,  // 含有数据 设为true 
           carts: [
             {id: 1, title: '新鲜芹菜 半斤', image:'/image/s5.png',num:4,price: 0.01,seclected:true},
             {id: 2, title: '素米 500g', image: '/image/s6.png', num: 1, price: 0.03, seclected:true}
@@ -43,48 +43,48 @@ Page({
   },
   // 当前商品选中事件
   selectList(e) {
-    const index = e.currentTarget.dataset.index;
-    let carts = this.data.carts;
-    const seclected = carts[index].seclected;
-    carts[index].seclected = !seclected;
+    const index = e.currentTarget.dataset.index;  //获取 data 传进来的index
+    let carts = this.data.carts;            // 获取购物车列表
+    const seclected = carts[index].seclected;    //获取当前商品的选中状态
+    carts[index].seclected = !seclected;    // 改变状态
     this.setData({
       carts: carts
     });
-    this.getTotalPrice();
+    this.getTotalPrice();                      //重新获取总价
   },
 
   // 删除购物车当前商品
 deleteList(e) {
   const index = e.currentTarget.dataset.index;
   let carts = this.data.carts;
-  carts.splice(index, 1);
+  carts.splice(index, 1);                 // 删除购物车列表里这个商品
   this.setData({
     carts: carts
   });
-  if (!carts.length) {
+  if (!carts.length) {                  // 如果购物车为空
     this.setData({
-      hasList: false
+      hasList: false                  // 修改标识为false  显示购物车为空页面
     });
-  } else {
-    this.getTotalPrice();
+  } else {                              // 如果不为空 
+    this.getTotalPrice();              // 重新计算总价格
   }
 },
 
 // 购物车全选事件
 
 selectAll(e) {
-    let selectAllStatus = this.data.selectAllStatus;
+    let selectAllStatus = this.data.selectAllStatus;  // 是否全选状态
     selectAllStatus = !selectAllStatus;
     let carts = this.data.carts;
 
     for (let i = 0; i < carts.length; i++) {
       carts[i].selected = selectAllStatus;
-    }
+    }                                         // 改变所有商品状态
     this.setData({
       selectAllStatus: selectAllStatus,
       carts: carts
     });
-    this.getTotalPrice();
+    this.getTotalPrice();       //重新获取总价
 },
 
 // 绑定加数量事件
