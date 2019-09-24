@@ -25,7 +25,7 @@ Page({
      * 发起请求获取订单列表信息
      */
     wx.request({
-      url: 'http://www.gdfengshuo.com/api/wx/orders.txt',
+      url: 'http://www.gdfengshuo.com/api/wx/orders.txt?id:1',
       success(res){
         self.setData({
           orders: res.data
