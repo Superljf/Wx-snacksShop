@@ -1,2 +1,20 @@
 <!--page/component/details/details.wxml-->
-<text>page/component/details/details.wxml</text>
+<view class="main">
+    <view class="goods-box">
+        <image src="{{goods.image}}" class="goods-thumb" />
+
+        <navigator open-type="switchTab" url="../cart/cart">
+            <view class="carts-icon {{scaleCart?'on': ''}}">
+                <image src="/image/cart2.png" />
+                <text class="carts-icon-num" wx:if="{{hasCarts}}">{{totalNum}}</text>
+            </view>
+        </navigator>
+
+        <view class="goods-opration">
+            <text class="goods-"></text>
+        </view>
+          
+    </view>
+      
+</view>
+  
