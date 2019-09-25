@@ -20,7 +20,6 @@
 ![image](https://raw.githubusercontent.com/lin-xin/mini-apps-mall/master/image/2.jpg) 
 ![image](https://raw.githubusercontent.com/lin-xin/mini-apps-mall/master/image/3.jpg) 
 ![image](https://raw.githubusercontent.com/lin-xin/mini-apps-mall/master/image/5.jpg) 
-![image](https://raw.githubusercontent.com/lin-xin/mini-apps-mall/master/image/6.jpg) 
 
 ## 运行
 需要安装有微信开发者工具。
